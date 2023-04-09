@@ -24,4 +24,4 @@ if __name__ == "__main__":
         w = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for t in total:
             w.writerow([user_id, username, t.get("completed"),
-                             t.get("title")])
+                        t.get("title")])
