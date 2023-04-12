@@ -26,7 +26,8 @@ if __name__ == "__main__":
     user_id = argv[1]
 
     with open("{}.json".format(argv[1]), "w", newline="") as jsonfile:
-        for t in total:
-            json.dump({user_id: [{"task": t.get("title"),
-                                 "completed": t.get("completed"),
-                                  "username": username}]}, jsonfile)
+        json.dump({user_id: [{
+                "task": t.get("title"),
+                "completed": t.get("completed"),
+                "username": username
+            } for t in total]}, jsonfile)
