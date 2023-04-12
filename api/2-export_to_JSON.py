@@ -25,7 +25,7 @@ if __name__ == "__main__":
     total = get(url + "todos", params={"userId": argv[1]}).json()
     user_id = argv[1]
 
-    with open("{}.json".format(user_id), "w") as jsonfile:
+    with open("{}.json".format(argv[1]), "w", newline="") as jsonfile:
         for t in total:
             json.dump({user_id: [{"task": t.get("title"),
                                  "completed": t.get("completed"),
