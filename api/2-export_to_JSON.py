@@ -27,6 +27,6 @@ if __name__ == "__main__":
 
     with open("{}.json".format(user_id), "w") as jsonfile:
         for t in total:
-            json.dump({user_id: {"task": t.get("title"),
+            json.dump({user_id: [{"task": t.get("title"),
                                  "completed": t.get("completed"),
-                                 "username": username}}, jsonfile)
+                                  "username": username}]}, jsonfile)
